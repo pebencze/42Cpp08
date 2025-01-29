@@ -1,2 +1,8 @@
 # 42Cpp08
-STL: templated containers, iterators, algorithms in CPP.
+Standard Template Library (STL): templated containers, iterators, algorithms in CPP.
+
+The components of STL:
+    1. Containers
+    2. Algorithms
+    3. Iterators
+    4. Functors
