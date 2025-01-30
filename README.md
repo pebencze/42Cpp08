@@ -22,5 +22,5 @@ The components of STL:
 1.d unorderes associative containers
 - stores data in no particular order in hash tables
 
-2. Algorythms
+2. Algorithms
 - sort, search, modify data
