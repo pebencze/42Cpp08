@@ -45,6 +45,23 @@ int main() {
   } catch (std::exception const &e) {
     std::cout << e.what() << std::endl;
   }
+  std::cout << std::endl;
+  try {
+    std::cout << "\e[0;36mtesting iterator function: " << std::endl;
+    Span sp(500);
+    std::vector<int> vector;
+
+    for (int i = 20; i <= 900; i = i + 2) {
+      vector.push_back(i);
+    }
+
+    sp.addMany(vector.begin(), vector.end());
+    sp.printSpan();
+
+  } catch (std::exception const &e) {
+    std::cout << e.what() << std::endl;
+  }
+
   std::cout << "\e[0m" << std::endl;
 return 0; 
 }

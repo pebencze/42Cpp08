@@ -1,6 +1,7 @@
 #include "Span.hpp"
 #include <stdexcept>
 #include <algorithm>
+#include <iostream>
 
 Span::Span() : _maxSize(0) {
 
@@ -55,4 +56,22 @@ int Span::longestSpan() const {
     sortedCopy = _numbers;
     std::sort(sortedCopy.begin(), sortedCopy.end());
     return static_cast<unsigned int>((sortedCopy[sortedCopy.size() - 1] - sortedCopy[0]));
+}
+
+void Span::addMany(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+    size_t amount = std::distance(begin, end);
+    if (amount > _maxSize - _numbers.size())
+        throw std::logic_error("Iterator range is too big.");
+    while (begin != end) {
+        addNumber(*begin);
+        begin++;
+    }
+}
+
+void Span::printSpan() {
+    std::vector<int>::iterator it;
+
+    for (it = _numbers.begin(); it != _numbers.end(); it++) {
+        std::cout << *it << ", ";
+    }
 }
