@@ -5,7 +5,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 SRCS = main.cpp
 OBJ_DIR = objs
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
-DEPS = MutantStack.hpp MutantStack.tpp
+DEPS = MutantStack.hpp
 
 $(OBJ_DIR)/%.o: %.cpp $(DEPS)
 	@mkdir -p $(OBJ_DIR)
