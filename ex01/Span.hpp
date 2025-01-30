@@ -3,7 +3,6 @@
 
 class Span {
     public: 
-        Span();
         Span(unsigned int N);
         Span(Span const &src);
         ~Span();
@@ -17,4 +16,5 @@ class Span {
     private:
         std::vector<int>  _numbers;
         unsigned int      _maxSize;
+        Span();
 };
