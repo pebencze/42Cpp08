@@ -13,20 +13,20 @@ int main(void) {
     mstack.pop();
     std::cout << "Popped 17. New size: " << mstack.size() << std::endl;
 
-    mstack.push(3); 
+    mstack.push(3);
     mstack.push(5);
     mstack.push(8);
     mstack.push(9);
     std::cout << "Pushed 3, 5, 8 and 9. New size: " << mstack.size() << std::endl;
 
-    MutantStack<int>::iterator it = mstack.begin(); 
+    MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
-    
+
     std::cout << std::endl;
     std::cout << "Iterating: ";
     while (it != ite) {
         std::cout << *it << ", ";
-        ++it; 
+        ++it;
     }
     std::cout << std::endl;
 
@@ -38,22 +38,22 @@ int main(void) {
 
     std::cout << std::endl;
     std::cout << "Different underlying container types: " << std::endl;
-    std::stack<int, std::vector<int> > vector;
+    MutantStack<int, std::vector<int> > vector;
     vector.push(23);
     vector.push(11);
     std::cout << "Top of vector: " << vector.top() << std::endl;
 
-    std::stack<int, std::list<int> > lst;
+    MutantStack<int, std::list<int> > lst;
     lst.push(48);
     lst.push(92);
     lst.push(3987);
     std::cout << "Top of list: " << lst.top() << std::endl;
 
-    std::stack<int, std::deque<int> > d;
+    MutantStack<int, std::deque<int> > d;
     d.push(56);
     d.push(0);
     d.push(33);
     std::cout << "Top of deque: " << d.top() << std::endl;
-    
+
     return 0;
 }
